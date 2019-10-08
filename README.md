@@ -27,3 +27,18 @@ docker run -d -e 'GIT_EMAIL=email_address' -e 'GIT_NAME=full_name' -e 'GIT_USERN
 ```
 
 You can then browse to ```http://<DOCKER_HOST>``` to view the default install files. To find your ```DOCKER_HOST``` use the ```docker inspect``` to get the IP address (normally 172.17.0.2)
+
+### Variables
+
+| Variable | Description |
+| --- | --- |
+| $GIT_NAME | User's git full name |
+| $GIT_EMAIL | User's git email address |
+| $GIT_REPO | Git repo to pull from |
+| $GIT_BRANCH | Branch to pull from |
+| $GIT_PERSONAL_TOKEN | Token to authenticate with git |
+| $GIT_USE_SSH | Set to 1 to use SSH key |
+| $SSH_KEY | Ssh key to authenticate to git in base64 format |
+| $WEBROOT | Defaults to /var/www/html |
+| $SKIP_CHOWN | Set to skip chown of webroot files |
+| $REMOVE_FILES | Set to 1 to remove files in webroot |
