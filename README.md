@@ -5,7 +5,7 @@ If you have improvements or suggestions please open an issue or pull request on 
 
 ### Versioning
 | Docker Tag | Git Release | Nginx Version | Alpine Version |
-|-----|-------|-----|--------|--------|
+|-----|-------|-----|--------|
 | latest/1.5.7 | Master Branch |1.14.0 | 4.14.79 |
 
 ### Links
