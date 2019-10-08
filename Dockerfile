@@ -4,7 +4,7 @@ FROM yobasystems/alpine:3.9.0-amd64
 RUN apk update
 
 # install git
-RUN apk add git nginx
+RUN apk add git nginx openssh openrc
 
 # add scripts
 ADD scripts/start.sh /start.sh
@@ -12,6 +12,12 @@ ADD scripts/pull /usr/bin/pull
 ADD scripts/push /usr/bin/push
 ADD scripts/letsencrypt-setup /usr/bin/letsencrypt-setup
 ADD scripts/letsencrypt-renew /usr/bin/letsencrypt-renew
+
+# openssh conf
+RUN echo "Port 2222" >> /etc/ssh/sshd_config && \
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && \
+/usr/bin/ssh-keygen -A && \
+echo "root:Docker!" | /usr/sbin/chpasswd
 
 # setup permissions
 RUN chmod 755 /usr/bin/pull && chmod 755 /usr/bin/push && chmod 755 /usr/bin/letsencrypt-setup && chmod 755 /usr/bin/letsencrypt-renew && chmod 755 /start.sh
