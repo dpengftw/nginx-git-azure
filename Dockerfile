@@ -4,7 +4,7 @@ FROM yobasystems/alpine:3.9.0-amd64
 RUN apk update
 
 # install git
-RUN apk add git nginx openssh openrc
+RUN apk add coreutils git nginx openssh openrc
 
 # add scripts
 ADD scripts/start.sh /start.sh
