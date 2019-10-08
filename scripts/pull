@@ -10,6 +10,4 @@ if [ -z "$GIT_NAME" ]; then
  exit
 fi
 
-cd /var/www/html
-git pull
-# chown -Rf nginx:nginx /var/www/html
+git -C /var/www/html pull
