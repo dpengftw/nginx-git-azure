@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM yobasystems/alpine:3.9.0-amd64
 
 # run update
 RUN apk update
