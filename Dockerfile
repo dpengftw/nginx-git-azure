@@ -39,5 +39,5 @@ ln -sf /dev/stdout /var/log/nginx/access.log && \
 ln -sf /dev/stderr /var/log/nginx/error.log
 
 # run post commands
-EXPOSE 443 80
+EXPOSE 443 80 2222
 CMD ["/start.sh"]
